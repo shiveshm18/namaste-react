@@ -1,1 +1,2 @@
-namaste react coursre by akshay saini
+namaste react coursre
+By Akshay Saini 
