@@ -10,9 +10,9 @@ import ReactDOM from "react-dom/client";
 // modern way: JSX => React.createElemen => creates react element (js object) => html object on render
 //  JSX is transpiled by bibal
 const heading = (
-    <h1 className="head">
-        Hello
-    </h1>
+    <h3 className="head">
+        People
+    </h3>
 );
 
 //React Component
@@ -20,7 +20,7 @@ const Component2 = ()=> <h2>Bow before your king</h2>;
 
 const Component = ()=> (
     <div>
-        {"hello"}
+        {heading}
         <h1 id="heading">I am the King of the World</h1>
         <Component2 />
     </div>
