@@ -23,6 +23,8 @@ const Component = ()=> (
         {heading}
         <h1 id="heading">I am the King of the World</h1>
         <Component2 />
+        <Component2></Component2>
+        {Component2()}
     </div>
     
 );
