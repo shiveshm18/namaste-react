@@ -22,33 +22,45 @@ const Header = ()=>{
     );
 };
 
-const ResCard = ()=>{
+const ResCard = (props)=>{
+    const { ResData } = props;
     return(
         <div className="cards">
             <img className="card-img" alt="res-logo" src="https://b.zmtcdn.com/data/pictures/chains/2/15702/de171d14091d634bb630e34bcd7ea5ea_featured_v2.jpg?output-format=webp&fit=around|771.75:416.25&crop=771.75:416.25;*,*" />
-            <h3>Non-Veg Dhaba</h3>  
-            <h4>Chicken, Mutton, Fish</h4>
-            <h4>4 stars</h4> 
-            <h4>30-40 minutes</h4>    
+            <h3>{ResData.name}</h3>  
+            <h4>{ResData.cuisine}</h4>
+            <h4>{ResData.rating}</h4> 
+            <h4>{ResData.deliveryTime}</h4>    
         </div>
 )};
+
+const ResObj = {
+    R1: {
+        name: "KFC" ,
+        cuisine: "Fried Chicken",
+        rating: "4.4 stars",
+        deliveryTime: "30-35 mins"
+    },
+    R2: {
+        name: "Star Bucks" ,
+        cuisine: "Coffee",
+        rating: "4.2 stars",
+        deliveryTime: "30-35 mins"
+    },
+    R3: {
+        name: "Non-Veg Dhaba" ,
+        cuisine: "Chicken, Mutton, Fish",
+        rating: "4 stars",
+        deliveryTime: "35-40 mins"
+    }
+}
 
 const Body = ()=>{
     return(
     <div className="body">
         <div className="res-container">
-            <ResCard/>
-            <ResCard/>
-            <ResCard/>
-            <ResCard/>
-            <ResCard/>
-            <ResCard/>
-            <ResCard/>
-            <ResCard/>
-            <ResCard/>
-            <ResCard/>
-            <ResCard/>
-            <ResCard/>
+            <ResCard  ResData = {ResObj.R1} />
+            <ResCard  ResData = {ResObj.R2} />
         </div>
     </div>
 )};
