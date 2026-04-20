@@ -21,7 +21,6 @@
     padding: 8px;
     width: 750px;
     border-radius: 15px;
-    border-color: rgb(196, 194, 194);
 }
 .card-img{
     width: 200px;
@@ -29,10 +28,12 @@
 }
 .cards{
     width: 200px;
-    border: 1px solid black;
     padding: 5px;
     margin: 10px;
     background-color: antiquewhite;
+}
+.cards:hover{
+    border: 1px solid black;
 }
 .res-container{
     display: flex;
