@@ -20,6 +20,7 @@
 .search > input {
     padding: 8px;
     width: 750px;
+    border: 1px solid black;
     border-radius: 15px;
 }
 .card-img{
@@ -39,4 +40,19 @@
     display: flex;
     flex-wrap: wrap;
     margin: 10px;
+}
+button {
+  margin-left: 15px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.shimmer-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.shimmer-card{
+    width: 200px;
+    height: 350px;
+    background-color: #f0f0f0;
+    margin: 20px;
 }

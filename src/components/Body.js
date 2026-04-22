@@ -1,9 +1,22 @@
-import ResList from "../utils/mockData";
 import ResCard from "./ResCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Shimmer from "./Shimmer"
 
 const Body = ()=>{
-const [resList , setresList] = useState(ResList)
+    const [resList , setresList] = useState([]);
+    useEffect(()=>{
+        fetchData()
+    },[])
+
+    const fetchData = ()=>{
+        fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=31.6554933&lng=74.8550184&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING')
+        .then(res => res.json())
+        .then(data => setresList(data.data.cards[4].card.card.gridElements.infoWithStyle.restaurants))
+    }
+
+    if(resList.length===0){
+        return <Shimmer />;
+    }
 
     return(
     <div className="body">
