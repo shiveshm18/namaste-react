@@ -13,15 +13,18 @@ const Body = ()=>{
     },[]);
 
     const fetchData = ()=>{
-        fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=31.6580091&lng=74.86166469999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING')
+        fetch('https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6109026&lng=77.1149472&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING')
         .then(res => res.json())    
         .then(data => {
-                    setresList(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-                    setCopyList(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-                })  //optional chaining
+                    const restaurants = data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
+                    //optional chaining and allowing fallback to empty array in case fetch data can't locate data
+                    setresList(restaurants);
+                    setCopyList(restaurants);
+                })  
     };
 
-    return (resList.length === 0) ? <Shimmer /> :   (               //conditional rendering using ternanry operator
+    //using !resList in case fetch can't locate data as then resList would be null so resList.length will give error
+    return (!resList || resList.length === 0) ? <Shimmer /> :   (               //conditional rendering using ternanry operator
     <div className="body"> 
         <div className="search">
                 <input type="text" placeholder="Search for Restraunt" value={searchText} 
