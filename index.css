@@ -17,11 +17,21 @@
     margin: 10px;
     padding: 10px;
 }
+.search{
+    display: flex;
+    justify-content: center;
+    margin: 25px;
+}
 .search > input {
     padding: 8px;
     width: 750px;
     border: 1px solid black;
     border-radius: 15px;
+}
+.search > button{
+    padding: 5px;
+    border-radius: 100%;
+    margin-left: 5px;
 }
 .card-img{
     width: 200px;
